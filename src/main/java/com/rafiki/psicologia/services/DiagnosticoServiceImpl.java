@@ -5,6 +5,8 @@ import com.rafiki.psicologia.entities.Diagnostico;
 import java.util.List;
 
 public class DiagnosticoServiceImpl implements DiagnosticoService {
+    //TODO
+
     @Override
     public List<Diagnostico> findAll() {
         return null;
