@@ -15,6 +15,8 @@ public class Diagnostico {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private long idCliente;
+    private long idPsicologo;
     private String antecedentes;
     private String situacionActual;
     private String diagnostico;

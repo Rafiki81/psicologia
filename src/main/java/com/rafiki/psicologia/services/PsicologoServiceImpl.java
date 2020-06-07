@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class PsicologoServiceImpl implements PsicologoService {
 
@@ -20,7 +19,6 @@ public class PsicologoServiceImpl implements PsicologoService {
 
     @Override
     public Psicologo login(String email, String password) {
-
         Predicate<Psicologo> emailMatch = p ->p.getEmail().equals(email);
         Predicate<Psicologo> passwordMatch = p ->p.getPassword().equals(password);
         List<Psicologo> psicologos = (List<Psicologo>)repository.findAll();
