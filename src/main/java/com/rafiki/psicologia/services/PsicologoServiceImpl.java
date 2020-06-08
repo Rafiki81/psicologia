@@ -27,6 +27,13 @@ public class PsicologoServiceImpl implements PsicologoService {
 
     @Override
     public Psicologo save(Psicologo psicologo) {
+
+        List<Psicologo> psicologos = (List<Psicologo>)repository.findAll();
+        Predicate<Psicologo> emailMatch = p ->p.getEmail().equals(psicologo.getEmail());
+        Predicate<Psicologo> dniMatch = p ->p.getDni().equals(psicologo.getDni());
+        if(!psicologos.stream().filter(emailMatch).findFirst().equals(null) || !psicologos.stream().filter(dniMatch).findFirst().equals(null) ) {
+            return null;
+        }
         return repository.save(psicologo);
     }
 
