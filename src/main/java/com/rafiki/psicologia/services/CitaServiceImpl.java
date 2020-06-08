@@ -1,41 +1,53 @@
 package com.rafiki.psicologia.services;
 
 import com.rafiki.psicologia.entities.Cita;
+import com.rafiki.psicologia.repositories.CitaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class CitaServiceImpl implements CitaService {
-    //TODO
+    @Autowired
+    CitaRepository repository;
 
 
     @Override
     public List<Cita> findAll() {
-        return null;
+        return (List<Cita>) repository.findAll();
     }
 
     @Override
     public List<Cita> findByIdCliente(long id) {
-        return null;
+
+        List<Cita> citas = (List<Cita>) repository.findAll();
+        Predicate<Cita> idCLienteMatch = p -> p.getClienteId() == id;
+        return citas.stream().filter(idCLienteMatch).collect(Collectors.toList());
     }
 
     @Override
     public List<Cita> findByDate(Date date) {
-        return null;
+        List<Cita> citas = (List<Cita>) repository.findAll();
+        Predicate<Cita> dateMatch = p -> p.getFechaEntrada().equals(date);
+        return citas.stream().filter(dateMatch).collect(Collectors.toList());
     }
 
     @Override
     public Cita findById(Long id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
     public Cita save(Cita cita) {
-        return null;
+        return repository.save(cita);
     }
 
     @Override
     public void delete(Cita cita) {
+
+        repository.delete(cita);
 
     }
 }
