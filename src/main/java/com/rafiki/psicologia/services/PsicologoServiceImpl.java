@@ -3,10 +3,12 @@ package com.rafiki.psicologia.services;
 import com.rafiki.psicologia.entities.Psicologo;
 import com.rafiki.psicologia.repositories.PsicologoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Predicate;
 
+@Service
 public class PsicologoServiceImpl implements PsicologoService {
 
     @Autowired
@@ -40,5 +42,22 @@ public class PsicologoServiceImpl implements PsicologoService {
     @Override
     public void delete(Psicologo psicologo) {
         repository.delete(psicologo);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        repository.deleteById(id);
+    }
+
+    @Override
+    public void update(Long id, Psicologo psicologo) {
+        repository.deleteById(id);
+        repository.save(psicologo);
+
+    }
+
+    @Override
+    public List<Psicologo> findAll() {
+        return(List<Psicologo>)repository.findAll();
     }
 }

@@ -4,10 +4,13 @@ import com.rafiki.psicologia.entities.Diagnostico;
 import com.rafiki.psicologia.entities.Factura;
 import com.rafiki.psicologia.repositories.DiagnosticoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+@Service
 public class DiagnosticoServiceImpl implements DiagnosticoService {
     @Autowired
     DiagnosticoRepository repository;

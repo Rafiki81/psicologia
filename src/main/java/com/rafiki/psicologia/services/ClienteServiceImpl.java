@@ -3,10 +3,13 @@ package com.rafiki.psicologia.services;
 import com.rafiki.psicologia.entities.Cliente;
 import com.rafiki.psicologia.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Predicate;
 
+
+@Service
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired

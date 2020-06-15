@@ -3,12 +3,15 @@ package com.rafiki.psicologia.services;
 import com.rafiki.psicologia.entities.Cita;
 import com.rafiki.psicologia.repositories.CitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+
+@Service
 public class CitaServiceImpl implements CitaService {
     @Autowired
     CitaRepository repository;
