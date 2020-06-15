@@ -27,7 +27,7 @@ public class PsicologoController {
 
     @PostMapping("/psicologo/")
     public ResponseEntity<?> save(@RequestBody Psicologo psicologo){
-        return new ResponseEntity<>(psicologo,HttpStatus.OK);
+        return new ResponseEntity<>(service.save(psicologo),HttpStatus.OK);
     }
 
     @DeleteMapping("/psicologo/{psicologoId}")
