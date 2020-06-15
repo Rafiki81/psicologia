@@ -20,6 +20,11 @@ public class PsicologoController {
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/psicologo/{psicologoId}")
+    public ResponseEntity<?> findById(@PathVariable Long psicologoId){
+        return new ResponseEntity<>(service.findById(psicologoId), HttpStatus.OK);
+    }
+
     @PostMapping("/psicologo/")
     public ResponseEntity<?> save(@RequestBody Psicologo psicologo){
         return new ResponseEntity<>(psicologo,HttpStatus.OK);
