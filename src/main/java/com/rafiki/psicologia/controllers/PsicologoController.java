@@ -27,7 +27,7 @@ public class PsicologoController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestBody Psicologo psicologo){
+    public ResponseEntity<Psicologo> save(@RequestBody Psicologo psicologo){
        return new ResponseEntity<>(service.save(psicologo),HttpStatus.OK);
     }
 
