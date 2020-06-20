@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: postgres://qralgplpsvoumj:369e72d75819a5caad71e673abe4e2376e760db92fe74ee7cc35129a7ad0e06c@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com:5432/d5poa57j68rg72
+    username: qralgplpsvoumj
+    password: 369e72d75819a5caad71e673abe4e2376e760db92fe74ee7cc35129a7ad0e06c
+
+
